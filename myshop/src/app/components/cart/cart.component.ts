@@ -7,16 +7,16 @@ import { MainService } from 'src/app/services/main.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
-export class CartComponent implements OnInit{
+export class CartComponent implements OnInit {
 
-  constructor(public mainService: MainService){}
+  constructor(public mainService: MainService) { }
 
   ngOnInit(): void {
   }
 
   getCartPrice() {
     let price = 0;
-    for (const object of this.mainService.cart){
+    for (const object of this.mainService.cart) {
       price += parseFloat(object.product.price);
     }
     return price;
